@@ -13,6 +13,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@justinribeiro/lite-youtube": "^1.8.2",
+    "install": "^0.13.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "zustand": "^5.0.5"

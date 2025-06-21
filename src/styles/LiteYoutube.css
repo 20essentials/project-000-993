@@ -1,0 +1,24 @@
+.container-lite-youtube {
+  width: 52vmax;
+  height: 30vmax;
+  aspect-ratio: 16 / 9;
+  position: relative;
+  overflow: visible;
+
+  lite-youtube {
+    z-index: 2;
+  }
+
+  .before-video {
+    position: absolute;
+    inset: -5vmax;
+    background-color: red;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    filter: blur(3vmax) saturate(500%);
+  }
+}
