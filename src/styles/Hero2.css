@@ -1,16 +1,28 @@
 .hero2 {
   display: flex;
 
+  @media (width <= 1111px) and (orientation: portrait) {
+    flex-direction: column-reverse;
+  }
+
   .aside-in-hero {
     height: 100vh;
 
+    @media (width <= 1111px) and (orientation: portrait) {
+      height: 50vh;
+      width: 100%;
+    }
+
     &.aside-left {
       width: 50%;
-      /* border-right: 0.1vmax solid #fff; */
       display: flex;
       flex-wrap: wrap;
       place-content: center;
       overflow: hidden;
+
+      @media (width <= 1111px) and (orientation: portrait) {
+        width: 100%;
+      }
 
       .container-img-vertical {
         width: 30vmax;
@@ -51,6 +63,11 @@
       display: flex;
       flex-wrap: wrap;
       place-content: center;
+
+      @media (width <= 1111px) and (orientation: portrait) {
+        width: 100%;
+        transform: translateY(5vmax);
+      }
 
       .container-content {
         width: 40vmax;

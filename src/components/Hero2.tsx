@@ -46,7 +46,7 @@ export function Hero2() {
       </aside>
       <aside className='aside-in-hero aside-right'>
         <section className='container-content'>
-          <h3 className='titulin'>¿Como funciona el sorteo?</h3>
+          <h3 className='titulin'>¿Como funciona el sorteo?&nbsp;</h3>
           {infoCards.map(prop => (
             <StackCard {...prop} />
           ))}
