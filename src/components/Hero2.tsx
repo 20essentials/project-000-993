@@ -13,7 +13,7 @@ const infoCards = [
   {
     title: '¿Quien puede participar?',
     paragraph:
-      '¡Todo el mundo! No importa de donde seas, puedes participar desde cualquier parte del planeta. Si no podemos enviarte el coche, te entregaremos el valor actual del coche.'
+      '¡Todo el mundo! No importa de donde seas, puedes participar desde cualquier parte del planeta. O sino te entregaremos el valor actual del coche.'
   },
   {
     title: '¿Hasta cuando se puede participar?',
