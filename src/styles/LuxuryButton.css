@@ -1,0 +1,157 @@
+.luxury-button {
+  background: #b3770c;
+  background-image: linear-gradient(135deg, #b3770ce6, #aa461acc);
+  --gradient2: linear-gradient(135deg, #a3690ae6, #8b3e08cc);
+  --gradient3: linear-gradient(135deg, #7a3006e6, #5d2204cc);
+  position: relative;
+  padding: 1.4vmax;
+  text-transform: uppercase;
+  letter-spacing: 0.1vmax;
+  color: #f0e4e4;
+  border: none;
+  border-radius: 0.7vmax;
+  cursor: pointer;
+  overflow: hidden;
+  transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s ease,
+    background-image 0.3s ease, background-color 0.3s ease;
+  background-blend-mode: overlay;
+  background-size: cover;
+  box-shadow: inset 0.2vmax 0.2vmax 0.39vmax rgba(0, 0, 0, 0.4),
+    inset -0.2vmax -0.2vmax 0.39vmax rgba(255, 255, 255, 0.1),
+    0.39vmax 0.39vmax 1.04vmax rgba(0, 0, 0, 0.5),
+    -0.26vmax -0.26vmax 0.78vmax rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-wrap: wrap;
+  place-content: center;
+  width: 90%;
+
+  &::before {
+    content: '';
+    position: absolute;
+    opacity: 0.7;
+    top: 0.39vmax;
+    left: 0.39vmax;
+    right: 0.39vmax;
+    bottom: 0.39vmax;
+    border-radius: 0.65vmax;
+    border: 0.13vmax dashed #d4a5a5;
+    box-shadow: inset 0.07vmax 0.07vmax 0.13vmax rgba(0, 0, 0, 0.3),
+      0.07vmax 0.07vmax 0.13vmax rgba(0, 0, 0, 0.2);
+    transition: inset 0.3s ease, opacity 0.3s ease, border-color 0.3s ease;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -150%;
+    width: 150%;
+    height: 30%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(240, 200, 200, 0.3),
+      transparent
+    );
+    transform: translateY(-50%);
+    opacity: 0.8;
+    transition: left 0.5s ease;
+    pointer-events: none;
+  }
+}
+
+.velvet-sheen {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.15),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease, left 0.4s ease;
+  pointer-events: none;
+}
+
+.luxury-button:hover {
+  background-image: var(--gradient2);
+  transform: translateY(-0.2vmax);
+  box-shadow: inset 0.13vmax 0.13vmax 0.33vmax rgba(0, 0, 0, 0.4),
+    inset -0.13vmax -0.13vmax 0.33vmax rgba(255, 255, 255, 0.15),
+    0.52vmax 0.52vmax 1.3vmax rgba(0, 0, 0, 0.55),
+    -0.39vmax -0.39vmax 0.91vmax rgba(255, 255, 255, 0.08);
+}
+
+.luxury-button:hover::before {
+  inset: 0.33vmax;
+  opacity: 0.9;
+  border-color: #e0b5b5;
+}
+
+.luxury-button:hover::after {
+  left: 100%;
+}
+
+.luxury-button:hover .velvet-sheen {
+  opacity: 0.8;
+  left: 100%;
+}
+
+.luxury-button:active {
+  background-image: var(--gradient3);
+  transform: translateY(0.13vmax);
+  box-shadow: inset 0.33vmax 0.33vmax 0.65vmax rgba(0, 0, 0, 0.5),
+    inset -0.13vmax -0.13vmax 0.33vmax rgba(255, 255, 255, 0.05);
+}
+
+.luxury-button:active::before {
+  top: 0.46vmax;
+  left: 0.46vmax;
+  right: 0.46vmax;
+  bottom: 0.46vmax;
+
+  opacity: 0.5;
+  border-color: #c49595;
+}
+
+.button-text {
+  position: relative;
+  font-size: 0.9vmax;
+  z-index: 1;
+  text-shadow: 0.07vmax 0.07vmax 0.13vmax rgba(0, 0, 0, 0.4),
+    -0.07vmax -0.07vmax 0.13vmax rgba(255, 255, 255, 0.2);
+  transition: text-shadow 0.3s ease;
+}
+
+.luxury-button:hover .button-text {
+  text-shadow: 0.07vmax 0.07vmax 0.2vmax rgba(0, 0, 0, 0.5),
+    -0.07vmax -0.07vmax 0.2vmax rgba(255, 255, 255, 0.25);
+}
+
+.luxury-button:active .button-text {
+  text-shadow: 0 0 0.07vmax rgba(0, 0, 0, 0.3),
+    0 0 0.07vmax rgba(255, 255, 255, 0.1);
+}
+
+.luxury-button:focus .velvet-sheen {
+  animation: velvet-sweep 0.6s ease-out;
+}
+
+@keyframes velvet-sweep {
+  0% {
+    left: -100%;
+    opacity: 0;
+  }
+  50% {
+    left: 0;
+    opacity: 0.8;
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
