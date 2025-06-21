@@ -35,7 +35,7 @@ export function Hero4() {
     <article className='hero4 container-hero'>
       <LiteYoutube />
       {arrayLogos.map(({ Element, nombreDeClase, red }) => (
-        <a target='_blank' href={red}>
+        <a target='_blank' href={red} key={`key-logo-${nombreDeClase}`}>
           <Element className={`logo-social-network ${nombreDeClase}`} />
           <img src={thunderImg} alt='Thunder Gif' className={`thunder thunder-${nombreDeClase}`} />
         </a>

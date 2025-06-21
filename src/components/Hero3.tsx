@@ -17,14 +17,14 @@ export function Hero3() {
   return (
     <article className='hero3 container-hero'>
       {[...Array(3).keys()].map(idx => (
-        <aside className={`row row-${idx + 1}`} key={crypto.randomUUID()}>
+        <aside className={`row row-${idx + 1}`} key={`key-row-${idx + 1}`}>
           {[...Array(3).keys()].map(n => {
             const currentIndex = idx * 3 + 1 + n;
             return (
               <aside
                 className='hexagon'
                 onClick={() => openGallery({currentIndex: currentIndex - 1})}
-                key={crypto.randomUUID()}
+                key={`key-hexagon-${currentIndex + 1}`}
               >
                 <img
                   src={withBase(`/assets/car${currentIndex}.webp`)}
@@ -39,7 +39,7 @@ export function Hero3() {
       <section ref={galleryRef} className='gallery'>
         {[...new Array(9).keys()].map(n => (
           <img
-            key={crypto.randomUUID()}
+            key={`key-gallery-${n + 1}`}
             src={withBase(`/assets/car${n + 1}.webp`)}
             alt='car image'
           />
