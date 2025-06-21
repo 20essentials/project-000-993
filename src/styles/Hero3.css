@@ -1,0 +1,90 @@
+.hero3 {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  place-content: center;
+  position: relative;
+  overflow: hidden;
+
+  .aro {
+    position: absolute;
+    width: 60vmax;
+    height: 60vmax;
+    bottom: -10vmax;
+    left: -10vmax;
+    transform: scaleX(-1);
+    mix-blend-mode: hard-light;
+    pointer-events: none;
+  }
+
+  .row {
+    width: 80%;
+    display: flex;
+    padding: 1vmax;
+    gap: 1vmax;
+    justify-content: center;
+    position: relative;
+
+    &.row-2 {
+      transform: translateX(5.5vmax) translateY(-4.5vmax);
+    }
+    &.row-3 {
+      transform: translateX(11vmax) translateY(-9vmax);
+    }
+
+    .hexagon {
+      width: 10vmax;
+      height: 12vmax;
+      clip-path: polygon(
+        50% 0%,
+        /* punta superior */ 100% 25%,
+        /* esquina superior derecha */ 100% 75%,
+        /* esquina inferior derecha */ 50% 100%,
+        /* punta inferior */ 0% 75%,
+        /* esquina inferior izquierda */ 0% 25% /* esquina superior izquierda */
+      );
+      overflow: hidden;
+
+      &:hover {
+        img {
+          scale: 1.5;
+        }
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: scale 0.4s ease;
+      }
+    }
+  }
+
+  .gallery {
+    height: 100vh;
+    display: flex;
+    padding: 1vmax;
+    position: absolute;
+    overflow-x: auto;
+    display: none;
+
+    &::-webkit-scrollbar {
+      width: 0.5vmax;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: color-mix(in srgb, red 50%, transparent 50%);
+      border-radius: 1vmax;
+      opacity: 0.5;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
