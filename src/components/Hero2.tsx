@@ -1,8 +1,26 @@
 import '@/styles/Hero2.css';
 import { withBase } from '@/utils/functionsTs';
+import { StackCard } from '@/components/StackCard';
 const grefgVertical = withBase('/assets/grefg-coche-vertical-6.webp');
 const lightLeftVertical = withBase('/assets/light-vertical-left-7.webp');
 const lightRightVertical = withBase('/assets/light-vertical-right-8.webp');
+const infoCards = [
+  {
+    title: '¿Cuantas veces puedo participar?',
+    paragraph:
+      'Puedes comprar tantas veces como quieras los fondos de pantalla y, por cada compra, tendrás una participación gratuita para ganar el coche.'
+  },
+  {
+    title: '¿Quien puede participar?',
+    paragraph:
+      '¡Todo el mundo! No importa de donde seas, puedes participar desde cualquier parte del planeta. Si no podemos enviarte el coche, te entregaremos el valor actual del coche.'
+  },
+  {
+    title: '¿Hasta cuando se puede participar?',
+    paragraph:
+      'Tienes del 25 de diciembre hasta el 6 de enero a las 23:59:59 (hora peninsular Española) para conseguir tus participaciones.'
+  }
+];
 
 export function Hero2() {
   return (
@@ -28,7 +46,10 @@ export function Hero2() {
       </aside>
       <aside className='aside-in-hero aside-right'>
         <section className='container-content'>
-          <h3>¿Como funciona el sorteo?</h3>
+          <h3 className='titulin'>¿Como funciona el sorteo?</h3>
+          {infoCards.map(prop => (
+            <StackCard {...prop} />
+          ))}
         </section>
       </aside>
     </article>

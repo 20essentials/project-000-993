@@ -53,9 +53,13 @@
       place-content: center;
 
       .container-content {
-        background-color: #fff1;
-        width: 30vmax;
+        width: 40vmax;
         height: 40vmax;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5vmax;
+        padding: 1vmax;
+        align-items: center;
 
         h3 {
           font-size: 2.2vmax;
@@ -67,6 +71,14 @@
             var(--primary-color),
             var(--secondary-color)
           );
+
+          &.titulin {
+            margin-bottom: 1.5vmax;
+          }
+
+          &:first-child {
+            text-align: center;
+          }
         }
       }
     }
