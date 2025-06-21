@@ -1,6 +1,10 @@
 .hero1 {
   display: flex;
 
+  @media (width <= 1111px) and (orientation: portrait) {
+    flex-direction: column;
+  }
+
   .container-inner {
     height: 100vh;
 
@@ -10,11 +14,31 @@
       flex-wrap: wrap;
       place-content: center;
 
+      @media (width <= 1111px) and (orientation: portrait) {
+        width: 100%;
+        height: 40vh;
+      }
+
+      .light-image-left {
+        position: absolute;
+        top: -5vmax;
+        left: -10vmax;
+        width: 40vmax;
+        height: 40vmax;
+        transform: rotate(2deg);
+      }
+
       .container-content {
         width: 60%;
         display: flex;
         flex-direction: column;
         gap: 1.8vmax;
+
+        @media (width <= 1111px) and (orientation: portrait) {
+          width: 70%;
+          align-items: center;
+          text-align: center;
+        }
 
         h3 {
           font-size: 2.2vmax;
@@ -26,6 +50,12 @@
             var(--primary-color),
             var(--secondary-color)
           );
+
+          .the-grefg {
+            width: 2vmax;
+            height: 2vmax;
+            transform: translateY(0.1vmax) rotate(3deg);
+          }
         }
 
         p {
@@ -39,6 +69,11 @@
     &.container-inner-right {
       width: 60%;
       position: relative;
+
+      @media (width <= 1111px) and (orientation: portrait) {
+        width: 100%;
+        height: 60vh;
+      }
 
       .img {
         width: 100%;
