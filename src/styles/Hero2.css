@@ -1,0 +1,74 @@
+.hero2 {
+  display: flex;
+
+  .aside-in-hero {
+    height: 100vh;
+
+    &.aside-left {
+      width: 50%;
+      border-right: 0.1vmax solid #fff;
+      display: flex;
+      flex-wrap: wrap;
+      place-content: center;
+      overflow: hidden;
+
+      .container-img-vertical {
+        width: 30vmax;
+        height: 40vmax;
+        background-color: orange;
+        position: relative;
+        border-radius: 1.2vmax;
+
+        .gref-vertical {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: inherit;
+        }
+
+        .light-img {
+          position: absolute;
+        }
+
+        .left-light-vertical {
+          width: 28vmax;
+          height: 28vmax;
+          top: -10vmax;
+          left: -10vmax;
+        }
+
+        .right-light-vertical {
+          width: 25vmax;
+          height: 25vmax;
+          bottom: -8vmax;
+          right: -9vmax;
+        }
+      }
+    }
+
+    &.aside-right {
+      width: 50%;
+      display: flex;
+      flex-wrap: wrap;
+      place-content: center;
+
+      .container-content {
+        background-color: #fff1;
+        width: 30vmax;
+        height: 40vmax;
+
+        h3 {
+          font-size: 2.2vmax;
+          text-wrap: balance;
+          color: transparent;
+          background-clip: text;
+          background-image: linear-gradient(
+            to right,
+            var(--primary-color),
+            var(--secondary-color)
+          );
+        }
+      }
+    }
+  }
+}
