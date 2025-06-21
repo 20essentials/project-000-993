@@ -5,6 +5,7 @@
   place-content: center;
   place-items: center;
   position: relative;
+  overflow: hidden;
 
   h1 {
     font-size: 2.2vmax;
@@ -20,10 +21,64 @@
     margin-bottom: 1.3vmax;
   }
 
+  .thunder {
+    position: absolute;
+    width: 16vmax;
+    height: 34vmax;
+
+    &.thunder-logo-twitch {
+      top: -8vmax;
+      left: 2vmax;
+      transform: rotate(45deg);
+    }
+
+    &.thunder-logo-youtube {
+      bottom: -8vmax;
+      right: 2vmax;
+      transform: rotate(45deg);
+    }
+
+    &.thunder-logo-ig {
+      bottom: -8vmax;
+      left: 2vmax;
+      transform: rotate(-45deg);
+    }
+
+    &.thunder-logo-x {
+      top: -8vmax;
+      right: 2vmax;
+      transform: rotate(-45deg);
+    }
+  }
+
   .logo-social-network {
     width: 3vmax;
     position: absolute;
-    top: 0;
-    left: 0;
+    color: #fff4;
+    transition: color 0.4s ease;
+
+    &:hover {
+      color: var(--primary-color);
+    }
+
+    &.logo-twitch {
+      top: 1.5vmax;
+      left: 1.5vmax;
+    }
+
+    &.logo-x {
+      top: 1.5vmax;
+      right: 1.5vmax;
+    }
+
+    &.logo-ig {
+      bottom: 1.5vmax;
+      left: 1.5vmax;
+    }
+
+    &.logo-youtube {
+      bottom: 1.5vmax;
+      right: 1.5vmax;
+    }
   }
 }

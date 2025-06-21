@@ -5,6 +5,10 @@
   position: relative;
   overflow: visible;
 
+  @media (width <= 1111px) and (orientation: portrait) {
+    zoom: 0.8;
+  }
+
   lite-youtube {
     z-index: 2;
   }

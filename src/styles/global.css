@@ -57,10 +57,11 @@ body,
 
 body {
   overflow-x: hidden;
+  background-color: #111;
 }
 
 #root {
-  background-color: #111111;
+  background-color: #111;
 }
 
 html,
