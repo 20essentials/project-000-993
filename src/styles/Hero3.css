@@ -66,7 +66,13 @@
     padding: 1vmax;
     position: absolute;
     overflow-x: auto;
-    display: none;
+    transform: scale(0);
+    transition: transform 0.8s ease;
+    transform-origin: 25% 75%;
+
+    &.open-gallery {
+      transform: scale(1);
+    }
 
     &::-webkit-scrollbar {
       width: 0.5vmax;
@@ -85,6 +91,8 @@
     img {
       width: 100%;
       height: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
     }
   }
 }

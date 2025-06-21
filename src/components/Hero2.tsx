@@ -48,7 +48,7 @@ export function Hero2() {
         <section className='container-content'>
           <h3 className='titulin'>¿Como funciona el sorteo?&nbsp;</h3>
           {infoCards.map(prop => (
-            <StackCard {...prop} />
+            <StackCard {...prop} key={crypto.randomUUID()}/>
           ))}
         </section>
       </aside>
